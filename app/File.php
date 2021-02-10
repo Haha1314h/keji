@@ -1,0 +1,2 @@
+<?php
+namespace App; use Illuminate\Database\Eloquent\Model; class File extends Model { protected $guarded = array(); public $timestamps = false; function deleteFile() { try { Storage::disk($this->driver)->delete($this->path); } catch (\Exception $sp45222f) { \Log::error('File.deleteFile Error: ' . $sp45222f->getMessage(), array('exception' => $sp45222f)); } } public static function getProductFolder() { return 'images/product'; } }
